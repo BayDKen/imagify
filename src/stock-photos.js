@@ -40,10 +40,7 @@ loadMoreBtn.addEventListener('click', () => {
 });
 
 async function searchImages(query, page) {
-    if (UNSPLASH_ACCESS_KEY === 'qBf2TBVWbb_mCDileJfKmbH-NwW6OYVpdQbyV2mMxK4') {
-        showError('Setup Diperlukan: Silakan masukkan Access Key Unsplash Anda di file src/stock-photos.js baris ke-6. Anda bisa mendapatkannya secara gratis di unsplash.com/developers');
-        return;
-    }
+
 
     loadingIndicator.style.display = 'block';
     errorMessage.style.display = 'none';
@@ -95,8 +92,11 @@ function displayImages(images) {
             <div class="img-wrapper" style="padding-bottom: ${ratio}%;">
                 <img src="${image.urls.small}" alt="${image.alt_description || 'Stock photo'}" loading="lazy">
                 <div class="img-overlay">
-                    <p class="photographer">📷 ${image.user.name}</p>
-                    <a href="${image.links.download}&force=true" target="_blank" class="download-icon" download>
+                    <p class="photographer" style="font-size: 0.8rem; line-height: 1.4;">
+                        Foto oleh <a href="${image.user.links.html}?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;">${image.user.name}</a> 
+                        di <a href="https://unsplash.com/?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;">Unsplash</a>
+                    </p>
+                    <a href="${image.links.download}&force=true" target="_blank" class="download-icon" download onclick="triggerDownload('${image.links.download_location}')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     </a>
                 </div>
@@ -106,6 +106,15 @@ function displayImages(images) {
         imageGrid.appendChild(imgCard);
     });
 }
+
+// Unsplash API requires triggering their download endpoint
+window.triggerDownload = async function(downloadLocation) {
+    try {
+        await fetch(downloadLocation + '&client_id=' + UNSPLASH_ACCESS_KEY);
+    } catch (e) {
+        console.error('Failed to trigger Unsplash download endpoint', e);
+    }
+};
 
 function showError(msg) {
     errorMessage.innerHTML = msg;
