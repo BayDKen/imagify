@@ -18,21 +18,23 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
-            <span class="glow-text" style="font-size: 1.5rem; margin: 0;">Imagify</span>
+            <a href="/" style="text-decoration: none;">
+                <h2 class="glow-text" style="font-size: 1.8rem; margin: 0;">Imagify</h2>
+            </a>
         </div>
         <div class="nav-links">
-            <a href="#about">Apa itu Imagify?</a>
-            <a href="#features">Fitur</a>
+            <a href="#about">What is Imagify?</a>
+            <a href="#features">Features</a>
         </div>
     </nav>
 
     <div class="wrapper" style="margin-top: 80px; width: 100%; max-width: 1000px; padding: 0 20px;">
         <!-- Hero Section -->
         <section class="hero">
-        <div class="hero-content">
-            <h1 class="glow-text hero-title">Wujudkan Imajinasi Visual Anda</h1>
-            <p class="hero-subtitle">Platform SuperApp berbasis AI yang memproses foto Anda langsung di browser. Tanpa server, tanpa batas, 100% aman.</p>
-            <a href="#features" class="btn btn-glow hero-btn">Mulai Berkarya Sekarang</a>
+        <div class="hero-content reveal">
+            <h1 class="glow-text hero-title">Pro-Level Editing, Made Ridiculously Easy</h1>
+            <p class="hero-subtitle">From removing backgrounds to making blurry photos crystal clear—everything happens instantly on your device. 100% free, blazingly fast, and completely private.</p>
+            <a href="#features" class="btn btn-primary hero-btn">Explore Features</a>
         </div>
             <div class="floating-shapes">
                 <div class="shape shape-1"></div>
@@ -43,21 +45,21 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-card glass-card">
-            <h2>Apa itu <span class="glow-text" style="font-size: inherit;">Imagify</span>?</h2>
-            <p>Imagify adalah ekosistem SuperApp untuk segala kebutuhan manipulasi visual Anda. Mulai dari menghapus latar belakang hingga meningkatkan kualitas foto, semuanya dilakukan oleh Kecerdasan Buatan (AI) canggih yang berjalan tepat di perangkat Anda (Client-side).</p>
-            <p><strong>Privasi Penuh:</strong> Data Anda tidak pernah diunggah ke server mana pun.</p>
+    <section class="about" id="about">
+        <div class="glass-card about-card reveal">
+            <h2>What is <span class="glow-text">Imagify</span>?</h2>
+            <p>Imagify dirancang bagi Anda yang menginginkan alat edit foto profesional tanpa kerumitan aplikasi berbayar. Kami menghadirkan berbagai fitur manipulasi visual tingkat lanjut langsung ke dalam <i>browser</i> Anda, tanpa perlu proses instalasi.</p>
+            <p><strong>Privasi Terjamin 100%:</strong> Berbeda dengan layanan lain, Imagify memproses setiap gambar langsung menggunakan perangkat Anda sendiri. Tidak ada foto yang diunggah maupun disimpan di <i>server</i> kami, sehingga keamanan data Anda benar-benar terjaga.</p>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
-        <h2 class="section-title">Fitur SuperApp Kami</h2>
+        <h2 class="section-title">Everything You Need, In One Place</h2>
         <div class="features-grid">
             
-            <!-- Card 1: Active -->
-            <a href="/bg-eraser.html" class="feature-card glass-card active-feature">
+            <!-- Card 1: Background Eraser -->
+            <a href="/bg-eraser.html" class="feature-card glass-card active-feature reveal">
                 <div class="feature-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <defs>
@@ -71,12 +73,12 @@
                     </svg>
                 </div>
                 <h3>AI Background Eraser</h3>
-                <p>Hapus latar belakang gambar dalam hitungan detik secara otomatis dengan kualitas pemotongan sub-piksel.</p>
-                <span class="try-btn">Coba Sekarang &rarr;</span>
+                <p>Upload any image and watch the background vanish instantly. Enjoy flawless cutouts, down to the finest hair details!</p>
+                <span class="try-btn">Start Erasing &rarr;</span>
             </a>
 
-            <!-- Card 2: Stock Photos (New) -->
-            <a href="/stock-photos.html" class="feature-card glass-card active-feature">
+            <!-- Card 2: Stock Photos -->
+            <a href="/stock-photos.html" class="feature-card glass-card active-feature reveal">
                 <div class="feature-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -84,29 +86,41 @@
                         <polyline points="21 15 16 10 5 21"></polyline>
                     </svg>
                 </div>
-                <h3>Pencari Gambar HD</h3>
-                <p>Cari dan unduh ribuan gambar stok resolusi tinggi secara gratis untuk keperluan desain referensi Anda.</p>
-                <span class="try-btn">Coba Sekarang &rarr;</span>
+                <h3>HD Stock Photos</h3>
+                <p>Need inspiration? Search and download thousands of high-quality, royalty-free images from professional photographers.</p>
+                <span class="try-btn">Find Images &rarr;</span>
             </a>
 
-            <!-- Card 3: Coming Soon -->
-            <div class="feature-card glass-card disabled">
-                <div class="badge-coming-soon">Segera Hadir</div>
-                <div class="feature-icon" style="color: #64748b;">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <!-- Card 3: AI Image Upscaler -->
+            <a href="/upscaler.html" class="feature-card glass-card active-feature reveal">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="9" y1="21" x2="21" y2="9"></line>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <polyline points="3 9 3 3 9 3"></polyline>
+                        <line x1="3" y1="3" x2="10" y2="10"></line>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
                 </div>
                 <h3>AI Image Upscaler</h3>
-                <p>Ubah foto buram menjadi tajam dan jernih dengan resolusi hingga 4K.</p>
-            </div>
+                <p>Got a blurry or low-res photo? Magically enhance and sharpen your images up to 4K resolution instantly.</p>
+                <span class="try-btn">Upscale Now &rarr;</span>
+            </a>
 
-            <!-- Card 3: Coming Soon -->
-            <div class="feature-card glass-card disabled">
-                <div class="badge-coming-soon">Segera Hadir</div>
+            <!-- Card 4: Coming Soon -->
+            <div class="feature-card glass-card disabled reveal">
+                <div class="badge-coming-soon">Coming Soon</div>
                 <div class="feature-icon" style="color: #64748b;">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
                 </div>
-                <h3>Magic Retouch</h3>
-                <p>Hapus objek, teks, atau orang yang tidak diinginkan dari foto Anda dengan sekali usap.</p>
+                <h3>More Magic Tools</h3>
+                <p>We're currently brewing more awesome features in our lab. Stay tuned!</p>
             </div>
 
         </div>

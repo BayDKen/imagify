@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Upscaler - Imagify</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Glow Effect -->
+    <div class="background-glow"></div>
+    <div class="background-glow" style="top: 80%; left: 10%; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%);"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" style="text-decoration: none;">
+                <span class="glow-text" style="font-size: 1.5rem; margin: 0;">&larr; Kembali</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <span style="color: var(--text-muted);">AI Image Upscaler</span>
+        </div>
+    </nav>
+
+    <div class="wrapper tool-wrapper">
+        <header class="header">
+            <h1 class="glow-text">AI Image Upscaler</h1>
+            <p class="subtitle">Tingkatkan resolusi gambar Anda hingga 2x lipat lebih tajam. Diproses 100% di browser Anda (Sangat Privat).</p>
+        </header>
+
+        <main class="app-card">
+            <!-- Upload Area -->
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" hidden>
+                
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="9" y1="21" x2="21" y2="9"></line>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <polyline points="3 9 3 3 9 3"></polyline>
+                        <line x1="3" y1="3" x2="10" y2="10"></line>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                </div>
+                <h3>Unggah Gambar Buram</h3>
+                <p>Seret & lepas gambar di sini atau <span class="highlight">klik untuk memilih</span></p>
+                <p class="file-hint" style="font-size: 0.85rem; color: #64748b; margin-top: -10px; margin-bottom: 20px;">Mendukung: JPG, PNG, WEBP</p>
+                <label for="file-input" class="btn btn-primary">
+                    Pilih File Gambar
+                </label>
+            </div>
+
+            <!-- Editor/Result Area -->
+            <div id="editor-area" class="editor-area" style="display: none;">
+                <!-- Loading State -->
+                <div id="loading" class="processing">
+                    <div class="loader">
+                        <div class="loader-inner"></div>
+                    </div>
+                    <h3>Sedang Mempertajam Gambar...</h3>
+                    <p>Ini memakan waktu beberapa detik menggunakan kekuatan GPU Anda.</p>
+                </div>
+
+                <!-- Result Layout -->
+                <div id="result-container" class="result-container" style="display: none;">
+                    <div class="comparison-grid">
+                        <div class="img-box">
+                            <span class="badge">Sebelum (Original)</span>
+                            <img id="original-image" alt="Original">
+                        </div>
+                        <div class="img-box result-box">
+                            <span class="badge badge-success">Sesudah (Dipertajam)</span>
+                            <img id="result-image" alt="Upscaled Result">
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="download-btn" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Unduh Gambar (Resolusi Tinggi)
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline">Coba Gambar Lain</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Crafted with <span style="color: #ef4444;">&hearts;</span> for you by <strong>Kend</strong></p>
+        </footer>
+    </div>
+
+    <!-- Reusing style.css -->
+    <script type="module" src="/src/upscaler.js"></script>
+</body>
+</html>

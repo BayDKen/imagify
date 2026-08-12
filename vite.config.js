@@ -14,6 +14,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         bgEraser: resolve(__dirname, 'bg-eraser.html'),
         stockPhotos: resolve(__dirname, 'stock-photos.html'),
+        upscaler: resolve(__dirname, 'upscaler.html'),
       },
     },
   },
