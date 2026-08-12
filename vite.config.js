@@ -13,6 +13,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         bgEraser: resolve(__dirname, 'bg-eraser.html'),
+        stockPhotos: resolve(__dirname, 'stock-photos.html'),
       },
     },
   },

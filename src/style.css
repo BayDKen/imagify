@@ -664,3 +664,123 @@ body {
     0% { transform: translateY(0) rotateX(10deg) rotateY(-10deg); }
     100% { transform: translateY(-30px) rotateX(-5deg) rotateY(15deg); }
 }
+
+/* Pencari Gambar / Stock Photos */
+.search-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.search-input {
+    flex: 1;
+    max-width: 600px;
+    padding: 16px 24px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s;
+}
+.search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+}
+.search-btn {
+    border-radius: 100px;
+    padding: 16px 32px;
+}
+.error-msg {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Masonry Grid (CSS columns) */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+    width: 100%;
+}
+.grid-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0,0,0,0.2);
+}
+.img-wrapper {
+    position: relative;
+    width: 100%;
+}
+.img-wrapper img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+.img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.grid-item:hover .img-overlay {
+    opacity: 1;
+}
+.photographer {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+}
+.download-icon {
+    align-self: flex-end;
+    background: white;
+    color: black;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+.download-icon:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+    .search-container {
+        flex-direction: column;
+    }
+    .search-btn {
+        width: 100%;
+    }
+}

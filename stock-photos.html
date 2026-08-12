@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencari Gambar HD - Imagify</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" style="text-decoration: none;">
+                <span class="glow-text" style="font-size: 1.5rem; margin: 0;">&larr; Kembali</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <span style="color: var(--text-muted);">Pencari Gambar HD</span>
+        </div>
+    </nav>
+
+    <div class="wrapper tool-wrapper" style="max-width: 1200px;">
+        <header class="header">
+            <h1 class="glow-text">Pencari Gambar HD</h1>
+            <p class="subtitle">Temukan ribuan gambar stok gratis beresolusi tinggi (bebas hak cipta) untuk desain Anda.</p>
+        </header>
+
+        <main class="app-card" style="padding: 30px;">
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Cari gambar... (contoh: nature, minimalist, technology)" autocomplete="off">
+                <button id="search-btn" class="btn btn-primary search-btn">Cari</button>
+            </div>
+
+            <div id="loading" class="processing" style="display: none; margin-top: 50px;">
+                <div class="loader">
+                    <div class="loader-inner"></div>
+                </div>
+                <h3>Mencari gambar...</h3>
+            </div>
+
+            <div id="error-message" class="error-msg" style="display: none;"></div>
+
+            <!-- Masonry Grid for Images -->
+            <div class="masonry-grid" id="image-grid">
+                <!-- Images will be injected here -->
+            </div>
+            
+            <div class="load-more-container" id="load-more-container" style="display: none; text-align: center; margin-top: 40px;">
+                <button id="load-more-btn" class="btn btn-outline">Muat Lebih Banyak</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Crafted with <span style="color: #ef4444;">&hearts;</span> for you by <strong>Kend</strong></p>
+    </footer>
+
+    <script type="module" src="/src/stock-photos.js"></script>
+</body>
+</html>
