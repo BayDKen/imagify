@@ -868,3 +868,43 @@ html {
     align-items: center;
     justify-content: center;
 }
+
+/* Mobile Responsiveness Enhancements */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .app-card, .glass-card, .feature-card {
+        padding: 25px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-3d {
+        height: 300px;
+    }
+    
+    .shape-1 {
+        width: 180px;
+        height: 250px;
+    }
+    
+    .upload-area {
+        padding: 40px 15px;
+    }
+}
