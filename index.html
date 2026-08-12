@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagify</title>
+    <title>Imagify - AI SuperApp untuk Visual Anda</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,84 +13,95 @@
 <body>
     <div class="background-glow"></div>
     <div class="background-glow glow-2"></div>
-    
-    <div class="wrapper">
-        <header class="header">
-            <h1 class="glow-text">Imagify</h1>
-            <p class="subtitle">Hapus latar belakang gambar dengan cerdas, cepat, dan 100% privat.</p>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="glow-text" style="font-size: 1.5rem; margin: 0;">Imagify</span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">Apa itu Imagify?</a>
+            <a href="#features">Fitur</a>
+        </div>
+    </nav>
+
+    <div class="wrapper" style="margin-top: 80px; width: 100%; max-width: 1000px; padding: 0 20px;">
+        <!-- Hero Section -->
+        <section class="hero">
+        <div class="hero-content">
+            <h1 class="glow-text hero-title">Wujudkan Imajinasi Visual Anda</h1>
+            <p class="hero-subtitle">Platform SuperApp berbasis AI yang memproses foto Anda langsung di browser. Tanpa server, tanpa batas, 100% aman.</p>
+            <a href="#features" class="btn btn-glow hero-btn">Mulai Berkarya Sekarang</a>
+        </div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-card glass-card">
+            <h2>Apa itu <span class="glow-text" style="font-size: inherit;">Imagify</span>?</h2>
+            <p>Imagify adalah ekosistem SuperApp untuk segala kebutuhan manipulasi visual Anda. Mulai dari menghapus latar belakang hingga meningkatkan kualitas foto, semuanya dilakukan oleh Kecerdasan Buatan (AI) canggih yang berjalan tepat di perangkat Anda (Client-side).</p>
+            <p><strong>Privasi Penuh:</strong> Data Anda tidak pernah diunggah ke server mana pun.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Fitur SuperApp Kami</h2>
+        <div class="features-grid">
             
-            <div class="overview">
-                <div class="feature">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span>100% Privat (Diproses di Browser)</span>
+            <!-- Card 1: Active -->
+            <a href="/bg-eraser.html" class="feature-card glass-card active-feature">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#3b82f6" />
+                                <stop offset="100%" stop-color="#8b5cf6" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+                        <polyline points="21 3 21 8 16 8"></polyline>
+                    </svg>
                 </div>
-                <div class="feature">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-                    <span>Cepat & Otomatis</span>
-                </div>
-                <div class="feature">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    <span>Kualitas Tinggi</span>
-                </div>
-            </div>
-        </header>
+                <h3>AI Background Eraser</h3>
+                <p>Hapus latar belakang gambar dalam hitungan detik secara otomatis dengan kualitas pemotongan sub-piksel.</p>
+                <span class="try-btn">Coba Sekarang &rarr;</span>
+            </a>
 
-        <main class="app-card">
-            <div class="upload-area" id="upload-area">
-                <input type="file" id="image-upload" accept="image/*" hidden>
-                <div class="upload-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <!-- Card 2: Coming Soon -->
+            <div class="feature-card glass-card disabled">
+                <div class="badge-coming-soon">Segera Hadir</div>
+                <div class="feature-icon" style="color: #64748b;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 </div>
-                <h3>Unggah Gambar Anda</h3>
-                <p id="file-name">Seret & lepas gambar di sini atau klik untuk memilih</p>
-                <label for="image-upload" class="btn btn-primary">
-                    Pilih File Gambar
-                </label>
-            </div>
-
-            <div class="pre-process-area" id="pre-process-area" style="display: none;">
-                <div class="image-box">
-                    <img id="preview-image" src="" alt="Preview Gambar">
-                </div>
-                <div class="action-group">
-                    <button id="process-btn" class="btn btn-glow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><polyline points="21 3 21 8 16 8"></polyline></svg>
-                        Mulai Hapus Latar Belakang
-                    </button>
-                    <button onclick="location.reload()" class="btn btn-text">Batalkan</button>
-                </div>
+                <h3>AI Image Upscaler</h3>
+                <p>Ubah foto buram menjadi tajam dan jernih dengan resolusi hingga 4K.</p>
             </div>
 
-            <div class="processing" id="processing" style="display: none;">
-                <div class="loader">
-                    <div class="loader-inner"></div>
+            <!-- Card 3: Coming Soon -->
+            <div class="feature-card glass-card disabled">
+                <div class="badge-coming-soon">Segera Hadir</div>
+                <div class="feature-icon" style="color: #64748b;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
                 </div>
-                <h3>Memproses dengan AI...</h3>
-                <p>Harap tunggu sebentar, AI sedang bekerja secara lokal di perangkat Anda.</p>
+                <h3>Magic Retouch</h3>
+                <p>Hapus objek, teks, atau orang yang tidak diinginkan dari foto Anda dengan sekali usap.</p>
             </div>
 
-            <div class="result-area" id="result-area" style="display: none;">
-                <div class="image-comparison">
-                    <div class="image-box">
-                        <span class="badge">Asli</span>
-                        <img id="original-image" src="" alt="Asli">
-                    </div>
-                    <div class="image-box checkerboard">
-                        <span class="badge badge-success">Transparan</span>
-                        <img id="result-image" src="" alt="Hasil Transparan">
-                    </div>
-                </div>
-                <div class="action-group">
-                    <a id="download-btn" class="btn btn-success" href="#" download="gambar-transparan.png">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Download Resolusi Tinggi
-                    </a>
-                    <button onclick="location.reload()" class="btn btn-outline">Proses Gambar Lain</button>
-                </div>
-            </div>
-        </main>
-    </div>
-    
-    <script type="module" src="/src/main.js"></script>
+        </div>
+    </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Crafted with <span style="color: #ef4444;">&hearts;</span> for you by <strong>Kend</strong></p>
+        </footer>
+    </div> <!-- End of wrapper -->
+
+    <script type="module" src="/src/landing.js"></script>
 </body>
 </html>
