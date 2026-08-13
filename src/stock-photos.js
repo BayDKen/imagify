@@ -89,14 +89,14 @@ function displayImages(images) {
         const ratio = (image.height / image.width) * 100;
         
         imgCard.innerHTML = `
-            <div class="img-wrapper" style="padding-bottom: ${ratio}%;">
+            <div class="img-wrapper" style="padding-bottom: ${ratio}%; cursor: pointer;" onclick="openModal('${image.urls.regular}', '${image.user.name.replace(/'/g, "\\'")}', '${image.user.links.html}?utm_source=imagify_superapp&utm_medium=referral', '${image.links.download}', '${image.links.download_location}')">
                 <img src="${image.urls.small}" alt="${image.alt_description || 'Stock photo'}" loading="lazy">
                 <div class="img-overlay">
                     <p class="photographer" style="font-size: 0.8rem; line-height: 1.4;">
-                        Foto oleh <a href="${image.user.links.html}?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;">${image.user.name}</a> 
-                        di <a href="https://unsplash.com/?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;">Unsplash</a>
+                        Foto oleh <a href="${image.user.links.html}?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;" onclick="event.stopPropagation()">${image.user.name}</a> 
+                        di <a href="https://unsplash.com/?utm_source=imagify_superapp&utm_medium=referral" target="_blank" style="color: #fff; text-decoration: underline;" onclick="event.stopPropagation()">Unsplash</a>
                     </p>
-                    <a href="${image.links.download}&force=true" target="_blank" class="download-icon" download onclick="triggerDownload('${image.links.download_location}')">
+                    <a href="${image.links.download}&force=true" target="_blank" class="download-icon" download onclick="event.stopPropagation(); triggerDownload('${image.links.download_location}')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     </a>
                 </div>
@@ -124,3 +124,29 @@ function showError(msg) {
 // Initial placeholder images on page load (Optional, using a random query)
 // searchInput.value = 'abstract background';
 // searchBtn.click();
+
+// Modal Logic
+const imageModal = document.getElementById("image-modal");
+const modalImg = document.getElementById("modal-img");
+const modalAuthor = document.getElementById("modal-author");
+const modalDownloadBtn = document.getElementById("modal-download-btn");
+const closeModal = document.getElementById("close-modal");
+
+window.openModal = function(imgSrc, authorName, authorLink, downloadUrl, downloadLocation) {
+    modalImg.src = imgSrc;
+    modalAuthor.innerHTML = `Foto oleh <a href="${authorLink}" target="_blank" style="color: #60a5fa; text-decoration: underline;">${authorName}</a> di Unsplash`;
+    modalDownloadBtn.href = downloadUrl + "&force=true";
+    modalDownloadBtn.onclick = () => triggerDownload(downloadLocation);
+    imageModal.style.display = "flex";
+};
+
+closeModal.onclick = function() {
+    imageModal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target === imageModal) {
+        imageModal.style.display = "none";
+    }
+};
+
