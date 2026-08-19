@@ -4,7 +4,7 @@ import './style.css';
 // PENTING: Ganti dengan Access Key Unsplash Anda!
 // Dapatkan gratis di: https://unsplash.com/developers
 // ==========================================
-const UNSPLASH_ACCESS_KEY = 'qBf2TBVWbb_mCDileJfKmbH-NwW6OYVpdQbyV2mMxK4'; 
+const UNSPLASH_ACCESS_KEY = 'Ybe5MnV7SwcgFwLr0yYWLgXcDGzp6omAIKcksSpJb-M'; 
 
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
